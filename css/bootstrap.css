@@ -26,7 +26,7 @@
 }
 
 .quotes {
-    color: #F16362;
+    color: #bd5611;
     font-weight: 600;
     font: bold 30px Georgia,"Times New Roman",Times,serif;
     text-shadow: 0 1px 0 #FFFFFF;
@@ -35,14 +35,14 @@
     left: -2px;
 }
 .endquotes {
-    color: #F16362;
+    color: #bd5611;
     font-weight: 600;
     font: bold 15px Georgia,"Times New Roman",Times,serif;
     text-shadow: 0 1px 0 #FFFFFF;
 }
 .banner { background: scroll center bottom #bd5611; width: 100%; height: 540px;}
 
-.banner-int { background: scroll center -150px #bd5611; width: 100%; height: 280px;}
+.banner-int { background: scroll center -150px #bd5611; width: 100%; height: 230px;}
 
 .top-pad {margin-top: 30px;}
 
