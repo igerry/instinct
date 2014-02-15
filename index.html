@@ -213,14 +213,43 @@
 	<!-- Carousel & Modal
 	================================================== -->
 	<script type="text/javascript" charset="utf-8">
-  	$(window).load(function() {
-    $('.flexslider').flexslider({
-          animation: "slide",
-          controlsContainer: ".flex-container"
-    });
-  	});
+		function getQueryString(name)
+		{
+		    var reg = new RegExp("(^|\\?|&)"+ name +"=([^&]*)(\\s|&|$)", "i");  
+		    if (reg.test(location.href)) return unescape(RegExp.$2.replace(/\+/g, " ")); return "";
+		};
+		
+		function getLang()
+		{
+			var lang = getQueryString('lang');
+			var redirectLangs = "|zh-Hans|zh-Hant|";
+			if (redirectLangs.indexOf('|'+lang+'|') < 0) {
+				lang = "";
+			}
+			return lang;
+		};
+		
+		function redirectToLangUrl()
+		{
+			var link = location.href.split('?')[0];
+			var lang = getLang();
+			if (lang != null && lang.length > 0) {
+				var directUrl = link + '/' + lang;
+				window.location.href = directUrl;
+			}
+		};
 	</script>
-
+	
+	<script type="text/javascript" charset="utf-8">
+	  	$(window).load(function() {
+	  		redirectToLangUrl();
+		    $('.flexslider').flexslider({
+		          animation: "slide",
+		          controlsContainer: ".flex-container"
+		    });
+	  	});
+	</script>
+	
 	 <script>
         $(document).ready(function() {
             $('.fancybox').fancybox({
